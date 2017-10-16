@@ -1,0 +1,48 @@
+{
+	"name": "Synced on Chrome",
+	"version": "0.1",
+	"description": "机器之心 Chrome 插件",
+	"default_locale": "zh-cn",
+	"icons": {
+		"16": "assets/icons/icon-16.png",
+		"48": "assets/icons/icon-48.png",
+		"128": "assets/icons/icon-128.png"
+	},
+
+	"author": "cassiuschen",
+	"background": {
+		"scripts": ["app/js/background.js"],
+		"persistent": true
+	},
+	"background_page": "background.html",
+
+	"chrome_url_overrides": {
+		"newtab": "index.html"
+	},
+
+
+	"manifest_version": 2,
+
+	"options_page": "options.html",
+
+	"browser_action": {
+		"default_icon": {
+			"19": "assets/icons/icon-19.png",
+			"38": "assets/icons/icon-38.png"
+		},
+		"default_title": "机器之心 Synced",
+		"default_popup": "app/pages/index.html"
+	},
+
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"notifications",
+		"http://*/",
+		"https://*/"
+	],
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"web_accessible_resources": ["*"],
+
+	"offline_enabled": true
+}
